@@ -29,9 +29,9 @@ public class CameraDrag : MonoBehaviour
         //if M1 down
 		if(Input.GetMouseButtonDown(0))
         {
-            v3_MouseStart = Input.mousePosition;        //save mouse position
-            v3_CameraStart = cam.transform.position;    //save cam position
-            CamDrag = true;                             //start dragging
+            v3_MouseStart = cam.ScreenToWorldPoint(Input.mousePosition);    //save mouse position
+            v3_CameraStart = cam.transform.position;                        //save cam position
+            CamDrag = true;                                                 //start dragging
         }
 
         //if M1 up
@@ -43,12 +43,13 @@ public class CameraDrag : MonoBehaviour
         //if dragging
         if(CamDrag)
         {
-            Vector3 v3_MouseDirection = cam.ScreenToViewportPoint(Input.mousePosition - v3_MouseStart);
-            Debug.unityLogger.Log("", "v3sm: " + v3_MouseStart + "\tv3mc: " + v3_MouseDirection);
-            v3_MouseDirection *= -CamSpeed;
+            Vector3 v3_MouseCurrent = cam.ScreenToWorldPoint(Input.mousePosition);      //get current mouse pos in world
+            Vector3 v3_MouseDiff = v3_MouseCurrent - v3_MouseStart;                     //get difference between start and current pos
+            
+            cam.transform.position = (v3_CameraStart - v3_MouseDiff);       //move camera by difference
+            v3_CameraStart = cam.transform.position;                        //save cam position
+            v3_MouseStart = cam.ScreenToWorldPoint(Input.mousePosition);    //save mouse position
 
-            //transform.Translate(v3_MouseDirection, Space.World);
-            //cam.transform.position = (v3_CameraStart + v3_MouseDirection);   //move camera
         }
     }
 }
