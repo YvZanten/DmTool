@@ -13,18 +13,13 @@ public class DrawLines : MonoBehaviour
     public int GridHeight;
 
     //local
-    private const int GridCellSize = 64;
-
     private LineRenderer[] GridArray_Vertical;
     private LineRenderer[] GridArray_Horizontal;
 
 	// Use this for initialization
 	void Start ()
     {
-        Debug.unityLogger.Log("shop", GridWidth.ToString());
-
         //create lines
-        Debug.unityLogger.Log("", "got width as thick as " + GridWidth);
         CreateLines();
 	}
 	
@@ -44,21 +39,9 @@ public class DrawLines : MonoBehaviour
             GameObject line = Instantiate(GridLine);
             LineRenderer lr = line.GetComponent<LineRenderer>();
             GridArray_Vertical[index] = lr;
-
-            //position size already set to 2 by Prefab
-            lr.SetPosition(0, GameCamera.ScreenToWorldPoint(
-                new Vector3(
-                    (index - GridWidth / 2 + 1) * GridCellSize, 
-                    -(GridHeight / 2 * GridCellSize), 
-                    -(GameCamera.transform.position.z)
-                    )));
-
-            lr.SetPosition(1, GameCamera.ScreenToWorldPoint(
-                new Vector3(
-                    (index - GridWidth / 2 + 1) * GridCellSize, 
-                    +(GridHeight / 2 * GridCellSize), 
-                    -(GameCamera.transform.position.z)
-                    )));
+            
+            lr.SetPosition(0, new Vector3(-(GridWidth / 2) + index, -(GridHeight / 2), 0));
+            lr.SetPosition(1, new Vector3(-(GridWidth / 2) + index, (GridHeight / 2), 0));
 
             line.transform.parent = this.transform;
         }
@@ -70,21 +53,9 @@ public class DrawLines : MonoBehaviour
             GameObject line = Instantiate(GridLine);
             LineRenderer lr = line.GetComponent<LineRenderer>();
             GridArray_Horizontal[index] = lr;
-
-            //position size already set to 2 by Prefab
-            lr.SetPosition(0, GameCamera.ScreenToWorldPoint(
-                new Vector3(
-                    -(GridWidth / 2 * GridCellSize), 
-                    (index - GridHeight / 2 + 1) * GridCellSize, 
-                    -(GameCamera.transform.position.z)
-                    )));
-
-            lr.SetPosition(1, GameCamera.ScreenToWorldPoint(
-                new Vector3(
-                    +(GridWidth / 2 * GridCellSize), 
-                    (index - GridHeight / 2 + 1) * GridCellSize, 
-                    -(GameCamera.transform.position.z)
-                    )));
+            
+            lr.SetPosition(0, new Vector3(-(GridWidth / 2), -(GridHeight / 2) + index, 0));
+            lr.SetPosition(1, new Vector3((GridWidth / 2), -(GridHeight / 2) + index, 0));
 
             line.transform.parent = this.transform;
         }
