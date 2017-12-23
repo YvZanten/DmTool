@@ -49,7 +49,6 @@ public class CameraDrag : MonoBehaviour
             cam.transform.position = (v3_CameraStart - v3_MouseDiff);       //move camera by difference
             v3_CameraStart = cam.transform.position;                        //save cam position
             v3_MouseStart = cam.ScreenToWorldPoint(Input.mousePosition);    //save mouse position
-
         }
     }
 }

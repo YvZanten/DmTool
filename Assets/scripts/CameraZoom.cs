@@ -7,6 +7,8 @@ public class CameraZoom : MonoBehaviour
     //imports
     public float SizeMin;
     public float SizeMax;
+
+    public GameObject GridManager;
     
     //local
     private Camera cam;
@@ -20,8 +22,14 @@ public class CameraZoom : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        Debug.unityLogger.Log(Input.mouseScrollDelta.y);
-        float CamSize = cam.orthographicSize - Input.mouseScrollDelta.y;
-        cam.orthographicSize = Mathf.Max(SizeMin, Mathf.Min(SizeMax, CamSize));
+        float ScrollDelta = Input.mouseScrollDelta.y;
+        if(Input.GetKey(KeyCode.LeftControl) && ScrollDelta != 0)
+        {
+            float CamSize = cam.orthographicSize - ScrollDelta;
+            cam.orthographicSize = Mathf.Max(SizeMin, Mathf.Min(SizeMax, CamSize));
+
+            if (GridManager != null)
+                GridManager.GetComponent<DrawLines>().RedrawGrid();
+        }
     }
 }

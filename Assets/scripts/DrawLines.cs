@@ -20,7 +20,7 @@ public class DrawLines : MonoBehaviour
 	void Start ()
     {
         //create lines
-        CreateLines();
+        CreateGrid();
 	}
 	
 	// Update is called once per frame
@@ -29,8 +29,13 @@ public class DrawLines : MonoBehaviour
 		
 	}
 
+    public void RedrawGrid()
+    {
+        
+    }
+
     //Create LineRenderers
-    private void CreateLines()
+    private void CreateGrid()
     {
         //create vertical lines
         GridArray_Vertical = new LineRenderer[GridWidth];
