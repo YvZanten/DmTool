@@ -142,8 +142,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameCamera: {fileID: 657630151}
   GridLine: {fileID: 1337029363969106, guid: 24a59e2d34b15a74da5560c6b09a8c8a, type: 2}
-  GridWidth: 200
-  GridHeight: 200
+  GridWidth: 256
+  GridHeight: 256
 --- !u!4 &81264825
 Transform:
   m_ObjectHideFlags: 0
@@ -201,7 +201,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.6397059, g: 0.29163063, b: 0.3276383, a: 0}
+  m_BackGroundColor: {r: 0.2784314, g: 0.2784314, b: 0.2784314, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SizeMin: 1
-  SizeMax: 30
+  SizeMax: 50
   GridManager: {fileID: 81264823}
 --- !u!114 &657630155
 MonoBehaviour:
