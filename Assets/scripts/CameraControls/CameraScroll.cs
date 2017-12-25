@@ -16,7 +16,7 @@ public class CameraScroll : MonoBehaviour
 	void Update ()
     {
         float ScrollDelta = Input.mouseScrollDelta.y;
-        if(ScrollDelta != 0)
+        if(!Input.GetKey(KeyCode.LeftControl) && ScrollDelta != 0)
         {
             bool shift = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
             if(!shift)
