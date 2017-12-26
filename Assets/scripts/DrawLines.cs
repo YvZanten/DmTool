@@ -49,7 +49,7 @@ public class DrawLines : MonoBehaviour
         }
 
         //create horizontal lines
-        GridArray_Horizontal = new LineRenderer[GridWidth + 1];
+        GridArray_Horizontal = new LineRenderer[GridHeight + 1];
         for (int index = 0; index < GridHeight + 1; index++)
         {
             GameObject line = Instantiate(GridLine);

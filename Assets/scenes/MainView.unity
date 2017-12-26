@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameCamera: {fileID: 657630151}
   GridLine: {fileID: 1337029363969106, guid: 24a59e2d34b15a74da5560c6b09a8c8a, type: 2}
-  GridWidth: 256
+  GridWidth: 32
   GridHeight: 256
 --- !u!4 &81264825
 Transform:
