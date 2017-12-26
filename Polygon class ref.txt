@@ -1,0 +1,24 @@
+Polygon
+	List<Point> Points;
+	List<Edge> Edges;
+	Texture2d Texture;
+	float TextureRotation;
+	enum Shape {...};
+	ShowOutline();
+	
+	List locked to
+	texture offset
+	
+Point
+	private Vector2 pos;
+	public float x {get pos.x}
+	public float y {get pos.y}
+	Edge previous;
+	Edge Next;
+	ShowOutline(); (circle point)
+	
+Edge
+	Point Start;
+	Point End;
+	ShowOutline();
+	
