@@ -1,11 +1,15 @@
 fileFormatVersion: 2
 guid: 3498de38d5656e24597dea2dd98106e6
-timeCreated: 1514287630
+timeCreated: 1514296283
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - EdgeObject: {fileID: 1890576491059752, guid: 9084863b2045abf4b9461e453d60e8d0,
+      type: 2}
+  - PointObject: {fileID: 1462409183540348, guid: 7cdcce2b45f47bc4a8df6e68413a7d14,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

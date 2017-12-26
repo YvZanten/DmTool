@@ -4,7 +4,7 @@ Polygon
 	Texture2d Texture;
 	float TextureRotation;
 	enum Shape {...};
-	ShowOutline();
+	ToggleOutline(bool show);
 	
 	List locked to
 	texture offset
@@ -15,7 +15,7 @@ Point
 	public float y {get pos.y}
 	Edge previous;
 	Edge Next;
-	ShowOutline(); (circle point)
+	ToggleOutline(bool show); (circle point)
 	
 Edge
 	Point Start;

@@ -8,6 +8,8 @@ public class CameraDrag : MonoBehaviour
     public float CamSpeed;
 
     //local
+    public bool ControlActive = false;
+
     private Camera cam;
 
     private Vector3 v3_MouseStart;
@@ -26,6 +28,9 @@ public class CameraDrag : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        if (!ControlActive)
+            return;
+
         //if M1 down
 		if(Input.GetMouseButtonDown(0))
         {
