@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4194020434152652}
   - component: {fileID: 114401110712915042}
+  - component: {fileID: 33761603623735420}
+  - component: {fileID: 23705707112098412}
   m_Layer: 0
   m_Name: Polygon
   m_TagString: Untagged
@@ -40,6 +42,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23705707112098412
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1986666123287298}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &33761603623735420
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1986666123287298}
+  m_Mesh: {fileID: 0}
 --- !u!114 &114401110712915042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -54,5 +97,7 @@ MonoBehaviour:
   EdgePrefab: {fileID: 1890576491059752, guid: 9084863b2045abf4b9461e453d60e8d0, type: 2}
   PointPrefab: {fileID: 1462409183540348, guid: 7cdcce2b45f47bc4a8df6e68413a7d14,
     type: 2}
+  TextureMaterial: {fileID: 2100000, guid: d0c1342fe94fb2b44af618f4dd768df9, type: 2}
   Points: []
   Edges: []
+  Shape: 0

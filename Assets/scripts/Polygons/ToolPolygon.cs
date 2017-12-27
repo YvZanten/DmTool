@@ -43,7 +43,11 @@ public class ToolPolygon : MonoBehaviour
             }
         }
         else if (Input.GetMouseButtonUp(0))
+        {
             CreatingPoly = false;
+            
+            CurrentPolygon.ShowMesh();
+        }
 
         if(CreatingPoly)
         {
