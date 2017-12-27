@@ -298,6 +298,10 @@
     <Compile Include="Assets\scripts\CameraControls\CameraScroll.cs" />
     <Compile Include="Assets\scripts\CameraControls\CameraZoom.cs" />
     <Compile Include="Assets\scripts\DrawLines.cs" />
+    <Compile Include="Assets\scripts\InputManager.cs" />
+    <Compile Include="Assets\scripts\Polygons\Edge.cs" />
+    <Compile Include="Assets\scripts\Polygons\Point.cs" />
+    <Compile Include="Assets\scripts\Polygons\Polygon.cs" />
     <Compile Include="Assets\scripts\ToolManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -3,17 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ToolManager : MonoBehaviour {
-    
-    public enum ToolType { Grab, Rectangle};
-    public ToolType CurrentTooltype;
-    public Camera SceneCamera;
 
-    private CameraDrag cd;
+    public bool mouseOver;
 
 	// Use this for initialization
 	void Start () {
-        CurrentTooltype = ToolType.Grab;
-        cd = SceneCamera.GetComponent<CameraDrag>();
 	}
 	
 	// Update is called once per frame
@@ -21,9 +15,13 @@ public class ToolManager : MonoBehaviour {
 		
 	}
 
-    public void ChangeToolType(int tool)
+    void OnMouseOver()
     {
-        CurrentTooltype = (ToolType)tool;
-        Debug.Log(tool.ToString());
+        mouseOver = true;
+    }
+
+    void OnMouseExit()
+    {
+        mouseOver = false;
     }
 }
