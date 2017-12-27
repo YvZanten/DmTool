@@ -26,27 +26,7 @@ public class Polygon : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        Points = new List<Point>(4);
-        Edges = new List<Edge>(4);
-        for (int index = 0; index < 4; index++)
-        {
-            GameObject Point = Instantiate(PointPrefab);
-            Point.transform.parent = this.transform;
-            Points.Add(Point.GetComponent<Point>());
-
-            GameObject Edge = Instantiate(EdgePrefab);
-            Edge.transform.parent = this.transform;
-            Edges.Add(Edge.GetComponent<Edge>());
-        }
-
-        for(int index = 0; index < 4; index++)
-        {
-            Points[index].EdgePrevious = Edges[(index + 3) % 4];
-            Points[index].EdgeNext = Edges[index];
-
-            Edges[index].Begin = Points[index];
-            Edges[index].End = Points[(index + 1) % 4];
-        }
+        SetupPointsAndEdges(false);
 
         Texture = new Texture2D(1, 1);
         TextureRotation = 0f;
@@ -58,6 +38,37 @@ public class Polygon : MonoBehaviour
     {
 		
 	}
+
+    //Setsup all points and edges for a simple square polygon (called immediatly after creating this, so points and edges can be set)
+    public void SetupPointsAndEdges(bool overwrite)
+    {
+        if (Points != null && Edges != null && overwrite == false)
+            return;
+
+        Points = new List<Point>(4);
+        Edges = new List<Edge>(4);
+        for (int index = 0; index < 4; index++)
+        {
+            GameObject Point = Instantiate(PointPrefab);
+            Point.name = "Point " + index;
+            Point.transform.parent = this.transform;
+            Points.Add(Point.GetComponent<Point>());
+
+            GameObject Edge = Instantiate(EdgePrefab);
+            Edge.name = "Edge " + index;
+            Edge.transform.parent = this.transform;
+            Edges.Add(Edge.GetComponent<Edge>());
+        }
+
+        for (int index = 0; index < 4; index++)
+        {
+            Points[index].EdgePrevious = Edges[(index + 3) % 4];
+            Points[index].EdgeNext = Edges[index];
+
+            Edges[index].PointBegin = Points[index];
+            Edges[index].PointEnd = Points[(index + 1) % 4];
+        }
+    }
 
     //Enable/disable outline of object
     public void ToggleOutline(bool show)

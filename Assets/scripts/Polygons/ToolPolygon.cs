@@ -32,12 +32,11 @@ public class ToolPolygon : MonoBehaviour
             CreatingPoly = true;
 
             v3_MouseStart = GameCamera.ScreenToWorldPoint(Input.mousePosition);
-            Debug.unityLogger.Log(v3_MouseStart);
 
-            PolygonObject = Instantiate(PolygonPrefab);
-            CurrentPolygon = PolygonObject.GetComponent<Polygon>();
-            //while(CurrentPolygon.Points.Count != 4) { Debug.unityLogger.Log("WAITING"); }
-            foreach(Point p in CurrentPolygon.Points)
+            PolygonObject = Instantiate(PolygonPrefab);             //instantiate  prefab
+            CurrentPolygon = PolygonObject.GetComponent<Polygon>(); //get polygon component
+            CurrentPolygon.SetupPointsAndEdges(true);               //setup polygon lists
+            foreach (Point p in CurrentPolygon.Points)
             {
                 p.X = v3_MouseStart.x;
                 p.Y = v3_MouseStart.y;
@@ -49,7 +48,6 @@ public class ToolPolygon : MonoBehaviour
         if(CreatingPoly)
         {
             v3_MouseNow = GameCamera.ScreenToWorldPoint(Input.mousePosition);
-            Debug.unityLogger.Log("(" + CurrentPolygon.Points.Count + ") NOW @ " + v3_MouseNow);
             CurrentPolygon.Points[1].X = v3_MouseNow.x;
 
             CurrentPolygon.Points[3].Y = v3_MouseNow.y;

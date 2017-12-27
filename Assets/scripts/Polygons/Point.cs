@@ -9,13 +9,12 @@ public class Point : MonoBehaviour
     {
         get
         {
-            return Position != null ? Position.x : 0f;
+            return Position.x;
         }
 
         set
         {
-            if (Position != null)
-                Position.x = value;
+            Position.x = value;
 
             UpdateEdges();
         }
@@ -24,13 +23,12 @@ public class Point : MonoBehaviour
     {
         get
         {
-            return Position != null ? Position.y : 0f;
+            return Position.y;
         }
 
         set
         {
-            if (Position != null)
-                Position.y = value;
+            Position.y = value;
 
             UpdateEdges();
         }
@@ -39,15 +37,10 @@ public class Point : MonoBehaviour
     public Edge EdgePrevious;   //reference to previous edge
     public Edge EdgeNext;       //reference to next edge
 
-    public Point()
-    {
-
-    }
-
     // Use this for initialization
     void Start ()
     {
-        Position = new Vector2(0, 0);
+        
 	}
 	
 	// Update is called once per frame

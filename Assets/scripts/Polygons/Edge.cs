@@ -9,8 +9,8 @@ public class Edge : MonoBehaviour
     public GameObject PointPrefab;
 
     //local
-    public Point Begin;
-    public Point End;
+    public Point PointBegin;
+    public Point PointEnd;
 
     private LineRenderer Renderer;
 
@@ -30,8 +30,11 @@ public class Edge : MonoBehaviour
     //called from outside this object, updates line renderer
     public void UpdateLine()
     {
-        Renderer.SetPosition(0, Begin.ToVec3());
-        Renderer.SetPosition(1, End.ToVec3());
+        if(Renderer != null && PointBegin != null)
+            Renderer.SetPosition(0, PointBegin.ToVec3());
+
+        if(Renderer != null && PointEnd != null)
+            Renderer.SetPosition(1, PointEnd.ToVec3());
     }
 
     //Enable/disable outline of object
