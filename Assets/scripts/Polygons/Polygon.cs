@@ -11,17 +11,17 @@ public class Polygon : MonoBehaviour
     };
 
     //import
-    public GameObject EdgeObject;
-    public GameObject PointObject;
+    public GameObject EdgePrefab;
+    public GameObject PointPrefab;
 
     //local
     public List<Point> Points;     //List of points in this polygon
     public List<Edge> Edges;       //List of edges in this polygon
 
-    Texture2D Texture;      //Texture to be displayed on this polygon
-    float TextureRotation;  //Rotation of texture
+    Texture2D Texture;              //Texture to be displayed on this polygon
+    float TextureRotation;          //Rotation of texture
 
-    ShapeType Shape;        //ShapeType of this object
+    ShapeType Shape;                //ShapeType of this object
 
 	// Use this for initialization
 	void Start ()
@@ -30,11 +30,11 @@ public class Polygon : MonoBehaviour
         Edges = new List<Edge>(4);
         for (int index = 0; index < 4; index++)
         {
-            GameObject Point = Instantiate(PointObject);
+            GameObject Point = Instantiate(PointPrefab);
             Point.transform.parent = this.transform;
             Points.Add(Point.GetComponent<Point>());
 
-            GameObject Edge = Instantiate(EdgeObject);
+            GameObject Edge = Instantiate(EdgePrefab);
             Edge.transform.parent = this.transform;
             Edges.Add(Edge.GetComponent<Edge>());
         }

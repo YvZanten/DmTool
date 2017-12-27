@@ -5,8 +5,8 @@ using UnityEngine;
 public class Edge : MonoBehaviour
 {
     //import
-    public GameObject EdgeObject;
-    public GameObject PointObject;
+    public GameObject EdgePrefab;
+    public GameObject PointPrefab;
 
     //local
     public Point Begin;

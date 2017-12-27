@@ -1,11 +1,14 @@
 fileFormatVersion: 2
 guid: b384181484788bc40b6c1d0550e4cbf3
-timeCreated: 1514289180
+timeCreated: 1514372314
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - PolygonPrefab: {fileID: 1986666123287298, guid: 3a20d0863ee33e340aaea5af87076564,
+      type: 2}
+  - GameCamera: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
